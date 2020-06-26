@@ -1,23 +1,48 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>My first Vue app</title>
-  <script src="https://unpkg.com/vue"></script>
-  <!-- development version below, includes helpful console warnings -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    {{ message }}
-  </div>
-
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!'
-      }
-    })
-  </script>
-</body>
+    <head>
+        <!-- import tailwind.css -->
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <!-- import unknown stylesheet -->
+        <link rel="stylesheet" href="index.css">
+        <!-- import vue.js -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <!-- div with vue binding -->
+        <div id="app" class="bg-blue-300 h-screen w-full flex flex-col justify-center items-center text-sm relative">
+            
+            <div>{{ message }}</div>
+            <template v-for="item in socials">
+                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    {{ item.title }}
+                </button> 
+            </template>
+            
+        </div>
+        
+        <!-- vue.js code block -->
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: "#icantproduce",
+                    socials: [
+                        { title: 'Discord', link: 'https://discord.gg/qDNjkxZ'},
+                        { title: 'YouTube', link: 'https://www.youtube.com/channel/UCYMTd4HH7ZllI2zYDZiVgzw'},
+                        { title: 'Twitch', link: 'https://www.twitch.tv/icantproduce'},
+                        { title: 'Soundcloud', link: 'https://soundcloud.com/icantproduce'},
+                        { title: 'Reddit', link: 'https://reddit.com/r/icantproduce'},
+                        { title: 'Instagram', link: 'https://www.instagram.com/icantproduce/'},
+                        { title: 'Twitter', link: 'https://twitter.com/icantproduce'},
+                    ]
+                },
+                computed: {
+                    
+                },
+                methods: {
+                    
+                }
+            });
+        </script>
+    </body>
 </html>
