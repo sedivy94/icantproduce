@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <!-- import tailwind.css -->
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <!-- import unknown stylesheet -->
+        <link rel="stylesheet" href="index.css">
+        <!-- import vue.js -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <!-- div with vue binding -->
+        <div id="app" class="bg-blue-300 h-screen w-full flex flex-col justify-center items-center text-sm relative">
+            
+            <div>{{ message }}</div>
+            
+        </div>
+        
+        <!-- vue.js code block -->
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: "Hello Vue!",
+                },
+                computed: {
+                    
+                },
+                methods: {
+                    
+                }
+            });
+        </script>
+    </body>
+</html>
