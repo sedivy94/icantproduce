@@ -12,53 +12,61 @@
         <script src="https://kit.fontawesome.com/ad3b48796b.js" crossorigin="anonymous"></script>
         
     </head>
+    <body>
         <!-- div with vue binding -->
-        <div id="app" class="bg-white h-screen w-full flex flex-col justify-center items-center text-sm relative">
-            
-            <div class="">{{ message }}</div>
-            <div class="flex self-center shadow-xl rounded-lg overflow-hidden">
-                <div class="w-64 flex-none">
-                    <img src="image.jpg">
+        <div id="app" class="h-screen w-screen justify-center items-center bg-white relative">
+
+            <nav class="top-0 w-full flex justify-between p-6 z-50 bg-transparent absolute subpixel-antialiased">
+                <span class="leading-none text-white font-bold font-sans uppercase">{{ message }}</span>
+                <span class="leading-none text-white font-light font-sans uppercase">About Shop Contact</span>
+            </nav>
+            <div class="bg-black bg-opacity-50">
+                <div class="w-full h-64 top-0 bg-center bg-cover relative" style="background-image: url('image2.jpg');">
+
                 </div>
-                <div class="flex flex-col py-6 px-6">
+            </div>
+            <div class="grid grid-cols-2 justify-center items-center shadow-xl rounded-lg overflow-hidden">
+                <div class="" style="background-image: url('image.jpg')">
+                </div>
+                <div class="flex flex-col flex-none py-6 px-6">
                     <template v-for="item in socials">
-                        <a :class="['flex', 'items-center', 'px-4', 'py-2', 'my-1', 'rounded-full', 'hover:shadow-xl', 'background-current', 'hover:bg-' + item.color, 'border', 'border-' + item.color, 'text-' + item.color, 'hover:text-white']" :href="[item.link]">   
-                            <div class="flex-none h-auto">
+                        <a :class="['flex', 'flex-none', 'items-center', 'px-4', 'py-2', 'my-1', 'rounded-full', 'border', 'transition', 'duration-200', 'background-current', 'border-' + item.color, 'text-' + item.color, 'hover:shadow-xl', 'hover:bg-' + item.color, 'hover:text-white']" :href="[item.link]">   
+                            <div class="flex-none h-full">
                                 <svg :class="[item.icon, 'h-4', 'w-auto', 'align-middle', 'bg-transparent', 'text-current']"></svg>
                             </div>
-                            <div class="flex-auto ml-3 mr-3 leading-none font-bold font-sans uppercase">{{ item.title }}</div>
+                            <div class="flex-auto ml-3 mr-3 leading-none font-semibold font-sans uppercase">{{ item.title }}</div>
                             <div class="flex-none h-auto">
                                 <svg :class="['fas fa-chevron-right', 'h-3', 'w-auto', 'bg-transparent', 'text-current']"></svg>
                             </div>
                         </a>
                     </template>
                 </div>
-            </div>
+            </div>    
+            
         </div>
-        
-        <!-- vue.js code block -->
-        <script>
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    message: "#icantproduce",
-                    socials: [
-                        { title: 'Discord', link: 'https://discord.gg/qDNjkxZ', icon: 'fab fa-discord fa-fw', color: 'indigo-500', active: 'false' },
-                        { title: 'YouTube', link: 'https://www.youtube.com/channel/UCYMTd4HH7ZllI2zYDZiVgzw', icon: 'fab fa-youtube fa-fw', color: 'red-500', active: 'false' },
-                        { title: 'Twitch', link: 'https://www.twitch.tv/icantproduce', icon: 'fab fa-twitch fa-fw', color: 'purple-500', active: 'false' },
-                        { title: 'Soundcloud', link: 'https://soundcloud.com/icantproduce', icon: 'fab fa-soundcloud fa-fw', color: 'orange-500', active: 'false' },
-                        { title: 'Reddit', link: 'https://reddit.com/r/icantproduce', icon: 'fab fa-reddit fa-fw', color: 'orange-600', active: 'false' },
-                        { title: 'Instagram', link: 'https://www.instagram.com/icantproduce/', icon: 'fab fa-instagram fa-fw', color: 'pink-500', active: 'false' },
-                        { title: 'Twitter', link: 'https://twitter.com/icantproduce', icon: 'fab fa-twitter fa-fw', color: 'blue-500', active: 'false' },
-                    ]
-                },
-                computed: {
-
-                },
-                methods: {
-                    
-                }
-            });
-        </script>
     </body>
+    <!-- vue.js code block -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "#icantproduce",
+                socials: [
+                    { title: 'Discord', link: 'https://discord.gg/qDNjkxZ', icon: 'fab fa-discord fa-fw', color: 'indigo-500', active: 'false' },
+                    { title: 'YouTube', link: 'https://www.youtube.com/channel/UCYMTd4HH7ZllI2zYDZiVgzw', icon: 'fab fa-youtube fa-fw', color: 'red-500', active: 'false' },
+                    { title: 'Twitch', link: 'https://www.twitch.tv/icantproduce', icon: 'fab fa-twitch fa-fw', color: 'purple-500', active: 'false' },
+                    { title: 'Soundcloud', link: 'https://soundcloud.com/icantproduce', icon: 'fab fa-soundcloud fa-fw', color: 'orange-500', active: 'false' },
+                    { title: 'Reddit', link: 'https://reddit.com/r/icantproduce', icon: 'fab fa-reddit fa-fw', color: 'orange-600', active: 'false' },
+                    { title: 'Instagram', link: 'https://www.instagram.com/icantproduce/', icon: 'fab fa-instagram fa-fw', color: 'pink-500', active: 'false' },
+                    { title: 'Twitter', link: 'https://twitter.com/icantproduce', icon: 'fab fa-twitter fa-fw', color: 'blue-500', active: 'false' },
+                ]
+            },
+            computed: {
+
+            },
+            methods: {
+                
+            }
+        });
+    </script>
 </html>
